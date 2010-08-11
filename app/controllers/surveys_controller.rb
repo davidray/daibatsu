@@ -8,6 +8,7 @@ class SurveysController < ApplicationController
   end
   
   def new 
+    @values = %w(Never Rarely Occassionally Sometimes Always)
     @survey = Survey.new  
     Punishment.all.each do |p|
       @survey.responses.build(:punishment => p) 

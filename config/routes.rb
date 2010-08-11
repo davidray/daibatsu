@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :surveys
+  map.resources :results, :only => :index
 
   map.resources :surveys
 

@@ -1,5 +1,5 @@
 class Survey < ActiveRecord::Base
-  attr_accessible :submitted_by
+  attr_accessible :submitted_by, :responses_attributes
 
   has_many :responses, :dependent => :destroy  
   

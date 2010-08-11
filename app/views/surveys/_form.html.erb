@@ -5,6 +5,7 @@
     <%= f.text_field :submitted_by %>
   </p>
   <% f.fields_for :responses do |c| %>
+    <%= c.hidden_field :punishment_id, :value => c.object.punishment.id %>
     <%= "#{c.object.punishment.name} is "%>
     <%= c.select :appropriate_when, %w(Never Rarely Sometimes Occasionally Always) %>
     <%= " appropriate"%>

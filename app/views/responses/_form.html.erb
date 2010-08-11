@@ -1,6 +1,6 @@
 <p>
   <%= f.hidden_field :punishment_id, :value => punishment.id %>
   <%= "#{h punshiment.name} is " %>
-  <%= f.select :appropriate_when, %w(Never Rarely Occassionally Sometimes Always) %>
+  <%= f.select :appropriate_when, @values %>
   appropriate
 </p>

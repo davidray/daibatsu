@@ -1,0 +1,24 @@
+<% title "Results" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Punishment</th>
+      <% @values.each do |val|%>
+      <th><%= val %></th>
+      <%end%>
+    </tr>
+  </thead>
+  <tbody>
+    <% @punishments.each do |punishment| %>
+      <tr>
+        <td>
+          <%= punishment.name %>
+        </td>
+        <% @values.each do |val|%>
+          <td><%= punishment.get_results(val) %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+    
