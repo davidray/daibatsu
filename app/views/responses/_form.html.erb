@@ -1,12 +1,6 @@
-<% form_for @response do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :punishment %><br />
-    <%= f.text_field :punishment %>
-  </p>
-  <p>
-    <%= f.label :appropriate_when %><br />
-    <%= f.text_field :appropriate_when %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<p>
+  <%= f.hidden_field :punishment_id, :value => punishment.id %>
+  <%= "#{h punshiment.name} is " %>
+  <%= f.select :appropriate_when, %w(Never Rarely Occassionally Sometimes Always) %>
+  appropriate
+</p>

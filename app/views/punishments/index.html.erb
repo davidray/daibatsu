@@ -1,5 +1,5 @@
 <% title "Punishments" %>
-
+<p><%= link_to image_tag("/images/add.png"), new_punishment_path %></p>
 <table>
   <tr>
     <th>Name</th>
@@ -9,11 +9,11 @@
     <tr>
       <td><%=h punishment.name %></td>
       <td><%=h punishment.description %></td>
-      <td><%= link_to "Show", punishment %></td>
-      <td><%= link_to "Edit", edit_punishment_path(punishment) %></td>
-      <td><%= link_to "Destroy", punishment, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to image_tag("/images/show.png"), punishment %></td>
+      <td><%= link_to image_tag("/images/edit.png"), edit_punishment_path(punishment) %></td>
+      <td><%= link_to image_tag("/images/delete.png"), punishment, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Punishment", new_punishment_path %></p>
+

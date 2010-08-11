@@ -1,7 +1,8 @@
 class CreateResponses < ActiveRecord::Migration
   def self.up
     create_table :responses do |t|
-      t.reference :punishment
+      t.references :punishment
+      t.references :survey
       t.string :appropriate_when
       t.timestamps
     end

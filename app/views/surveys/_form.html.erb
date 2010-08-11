@@ -1,0 +1,14 @@
+<% form_for @survey do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :submitted_by %><br />
+    <%= f.text_field :submitted_by %>
+  </p>
+  <% f.fields_for :responses do |c| %>
+    <%= "#{c.object.punishment.name} is "%>
+    <%= c.select :appropriate_when, %w(Never Rarely Sometimes Occasionally Always) %>
+    <%= " appropriate"%>
+    <br/>
+  <% end %>
+  <p><%= f.submit %></p>
+<% end %>
