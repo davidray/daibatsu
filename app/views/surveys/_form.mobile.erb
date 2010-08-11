@@ -1,0 +1,20 @@
+<% form_for @survey do |f| %>
+  <%= f.error_messages %>
+  <ul class='rounded'>
+    <li><%= f.text_field :submitted_by, :placeholder => "Your Name" %></li>
+  </ul>
+  <ul class='rounded'>
+    <li>When is each punishment appropriate?</li>
+  </ul>
+  <ul class='rounded'>
+    <% f.fields_for :responses do |c| %>
+      <%= c.hidden_field :punishment_id, :value => c.object.punishment.id %>
+      <li>
+        <%= c.object.punishment.name %>
+        <div style="float:right"><%= c.select :appropriate_when, %w(Never Rarely Sometimes Occasionally Always),  {:include_blank => "Pick one..."} %></div>
+      </li>
+    <% end %>
+  </ul>
+  
+  <p><%= link_to "Submit", nil, :class => "whiteButton submit" %></p>
+<% end %>

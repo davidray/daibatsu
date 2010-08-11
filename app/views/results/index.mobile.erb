@@ -1,0 +1,30 @@
+<script type="text/javascript" charset="utf-8">
+$(function() {
+$('.inlinesparkline').sparkline(); 
+
+var myvalues = [10,8,5,7,4,4,1];
+$('.dynamicsparkline').sparkline(myvalues);
+
+$('.pie').sparkline('html', { type: 'pie', height: '40px', offset: '90', sliceColors: ["black","grey","white","orange", "red"] });
+
+$('.small_pie').sparkline('html', { type: 'pie', height: '15px', offset: '90', sliceColors: ["green","red"] });
+
+$('.inlinebar').sparkline('html', {type: 'bar', barColor: 'red'} );
+});
+</script>
+
+<% title "Results" %> 
+<ul class='rounded'>
+  <% @punishments.each do |punishment| %>
+    <li class='flip'>
+      <%= punishment.name %>
+      <% vals = [] %>
+      <% @values.each do |val|%>
+        <% vals << punishment.get_results(val) %>
+      <%end%>
+      <span class="pie"><%= vals.join(',') %></span>
+    </li>
+  <% end %>
+</ul> 
+
+  

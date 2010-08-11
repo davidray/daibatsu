@@ -4,6 +4,7 @@
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'mobile' if mobile_device? %> 
     <%= yield(:head) %>
   </head>
   <body>
@@ -18,5 +19,12 @@
       
       <%= yield %>
     </div>
+    <p>  
+      <% if mobile_device? %>  
+        <%= link_to "Full Site", :mobile => 0 %>  
+      <% else %>  
+        <%= link_to "Mobile Site", :mobile => 1 %>  
+      <% end %>  
+    </p>
   </body>
 </html>

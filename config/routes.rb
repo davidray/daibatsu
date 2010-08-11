@@ -1,9 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :results, :only => :index
 
-  map.resources :surveys
-
-  map.resources :responses
+  map.resources :surveys, :only => [:index, :new, :create]
 
   map.resources :punishments
 
