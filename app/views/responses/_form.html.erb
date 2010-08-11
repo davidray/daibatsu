@@ -1,0 +1,12 @@
+<% form_for @response do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :punishment %><br />
+    <%= f.text_field :punishment %>
+  </p>
+  <p>
+    <%= f.label :appropriate_when %><br />
+    <%= f.text_field :appropriate_when %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,16 @@
+<% title "Punishment" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @punishment.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @punishment.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_punishment_path(@punishment) %> |
+  <%= link_to "Destroy", @punishment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", punishments_path %>
+</p>

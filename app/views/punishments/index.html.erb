@@ -1,0 +1,19 @@
+<% title "Punishments" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% for punishment in @punishments %>
+    <tr>
+      <td><%=h punishment.name %></td>
+      <td><%=h punishment.description %></td>
+      <td><%= link_to "Show", punishment %></td>
+      <td><%= link_to "Edit", edit_punishment_path(punishment) %></td>
+      <td><%= link_to "Destroy", punishment, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Punishment", new_punishment_path %></p>

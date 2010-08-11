@@ -1,0 +1,7 @@
+one:
+  punishment: 1
+  appropriate_when: MyString
+
+two:
+  punishment: 1
+  appropriate_when: MyString
